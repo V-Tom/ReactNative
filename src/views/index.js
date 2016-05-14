@@ -5,24 +5,25 @@ import {
     StyleSheet,
     NavigatorIOS,
     View,
+    ScrollView,
     TabBarIOS,
     Text
 } from 'react-native';
 
 
-import Blog from './components/blog'
-import Labs from './components/labs'
-import About from './components/about'
-import Setting from './components/setting'
+import Blog from './Blog'
+import Labs from './Labs'
+import About from './About'
+import Setting from './Setting'
 
-import BlogIcon from '../asserts/TabBar/Blog'
-import LabsIcon from '../asserts/TabBar/Labs'
-import AboutIcon from '../asserts/TabBar/About'
-import SettingIcon from '../asserts/TabBar/Setting'
+import BlogIcon from '../asserts/image/TabBar/Blog'
+import LabsIcon from '../asserts/image/TabBar/Labs'
+import AboutIcon from '../asserts/image/TabBar/About'
+import SettingIcon from '../asserts/image/TabBar/Setting'
 
 export default class Index extends Component {
     constructor() {
-        super()
+        super();
         let selectedTab="Blog";
         this.state = {selectedTab};
         this.__init();
@@ -40,16 +41,6 @@ export default class Index extends Component {
             },
             navigator:{
                 backgroundColor: '#E7EAEC'
-            },
-            content: {
-                flex: 1,
-                alignItems: 'center'
-            },
-            text: {
-                flex: 1,
-                alignItems: 'center',
-                color: "white",
-                margin: 50
             }
         });
     }
@@ -71,14 +62,14 @@ export default class Index extends Component {
                                         selectedTab: 'Blog'
                                     })
                     }>
-                        <NavigatorIOS style={styles.container}
-                                      tintColor={'#333344'} translucent={true}
-                                      initialRoute={{
+                            <NavigatorIOS style={styles.container}
+                                          tintColor={'#333344'} translucent={true}
+                                          initialRoute={{
                                         title: '我的博客',
                                         component: Blog
                                       }}
-                                      itemWrapperStyle={styles.navigator}
-                        />
+                                          itemWrapperStyle={styles.navigator}
+                            />
                     </TabBarIOS.Item>
 
                     <TabBarIOS.Item title="实验室" icon={{uri:LabsIcon,scale:25}}
