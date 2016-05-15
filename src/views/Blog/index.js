@@ -11,7 +11,7 @@ import {
     TouchableHighlight
 } from 'react-native';
 
-import ArticleDetail from './articleDetail'
+import ArticleDetail from './navigation/article.detail'
 
 export default class Blog extends Component {
     constructor(props) {
@@ -106,7 +106,7 @@ export default class Blog extends Component {
         //}
     }
 
-    __renderDefault() {
+    __renderLogin() {
         return (
             <ScrollView showsHorizontalScrollIndicator={true}>
                 <View style={{height: 50}}>
@@ -164,7 +164,7 @@ export default class Blog extends Component {
     render() {
         const {isLoadDataReady}=this.state;
         if (!isLoadDataReady) {
-            return this.__renderDefault();
+            return this.__renderLogin();
         } else {
             return this.__renderBlogList();
         }
